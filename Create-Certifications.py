@@ -17,6 +17,11 @@ client_id = os.getenv('CLIENT_ID')
 client_secret = os.getenv('CLIENT_SECRET')
 base_url = os.getenv('BASE_URL')
 
+# Ensure all required environment variables are set
+if not all([client_id, client_secret, base_url]):
+    print("Missing one or more required environment variables.")
+    exit(1)
+
 #Define the deadline for the certifications
 deadline = "2024-12-25T06:00:00.468Z"
 
